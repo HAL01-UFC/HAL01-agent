@@ -31,20 +31,7 @@ POC of the HAL01 conversational agent, for use in the UFC ecosystem.
 
    to add a new dependency:
     ```bash
-      # Install uv if you don't have it
-      pip install uv
-      
-      # Create and activate a virtual environment
-      uv venv
-
-      # TO ACTIVATE:
-      # On Windows
-      .venv\Scripts\activate
-      # On Mac/Linux
-      source .venv/bin/activate
-      
-      # Install dependencies from pyproject.toml
-      uv pip install -e .
+      uv add dependency
       ```
 
 3. Set up environment variables (create a `.env` file with the following variables):
