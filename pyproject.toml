@@ -1,0 +1,40 @@
+[project]
+name = "HAL01-agent"
+version = "1.0.0"
+requires-python = ">=3.11.8"
+readme = "README.md"
+
+dependencies = [
+  "fastapi[standard]>=0.115.5",
+  "gunicorn>=23.0.0",
+  "hypercorn>=0.17.3",
+  "networkx>=3.4.2",
+  "openai>=1.56.0",
+  "openpyxl>=3.1.5",
+  "pre-commit>=4.0.1",
+  "python-dotenv>=1.0.1",
+  "unstructured>=0.16.9",
+  "unstructured_client>=0.28.1",
+  "uvicorn>=0.32.1",
+  "langchain>=0.3.9",
+  "langchain-anthropic>=0.3.0",
+  "langchain-cohere>=0.3.3",
+  "langchain-community>=0.3.9",
+  "langchain-core>=0.3.21",
+  "langchain-experimental>=0.3.3",
+  "langchain-groq>=0.2.1",
+  "langchain-openai>=0.2.10",
+  "langchain-qdrant>=0.2.0",
+  "langchainhub>=0.1.21",
+  "langgraph>=0.2.53",
+  "langwatch>=0.0.13",
+  "pydantic>=2.9.2",
+  "uvicorn-worker>=0.2.0",
+  "uptrace>=1.28.2",
+  "pywa[fastapi]>=2.3.0",
+  "pydub>=0.25.1",
+  "apscheduler>=3.10.4",
+  "cohere<5.16",
+  "langchain-ollama>=0.3.10",
+  "langgraph-cli[inmem]>=0.4.7",
+]
