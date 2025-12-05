@@ -11,6 +11,7 @@ from app.agents.prompts.agent_prompt import agent_prompt
 from app.agents.state import AgentState
 from app.utils.edge_conditions import should_continue_chatbot
 
+from app.agents.tools import retrieve_ppcs_tool
 
 
 class HALAgent(ABC):
@@ -96,17 +97,17 @@ class HALAgent(ABC):
         return {"messages": outputs}
 
     async def create_graph(self):
+        self.base_tools = [retrieve_ppcs_tool]
         graph_builder = StateGraph(AgentState)
-        
+
         graph_builder.add_node("chatbot", self.call_chatbot)
         graph_builder.add_node("agent_tools", self.execute_tools)
 
-     
         chatbot_mapping = {
             "tool": "agent_tools", 
             "end": END,
         }
-        
+
         graph_builder.add_edge(START, "chatbot")
         graph_builder.add_edge("agent_tools", "chatbot")
         graph_builder.add_conditional_edges("chatbot", should_continue_chatbot, chatbot_mapping)
